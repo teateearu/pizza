@@ -11,7 +11,7 @@ class Menu
     @pizzas << Pizza.new(105, "Calzone", "Spicy salsicca sausage, Italian ham and fresh mushrooms on homemade tomato sauce and mozzarella.", 9)
     @pizzas << Pizza.new(106, "Americana", "Spicy pepperoni salami and tangy salsiccia sausage on homemade tomato sauce with mozzarella.", 9)
   end
-  
+
   def print
     puts "We have on our menu:"
 
@@ -19,4 +19,12 @@ class Menu
       puts "#{pizza.number}: #{pizza.name} - #{pizza.ingredients}"
     end
   end
+
+  def make_choice
+
+  puts "Which one would you like?"
+  pizza_number = gets.chomp.to_i
+
+  @pizzas.find { |pizza| pizza.number == pizza_number }
+end
 end
